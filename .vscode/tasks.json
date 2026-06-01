@@ -1,0 +1,199 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run All Tests",
+      "type": "npm",
+      "script": "test",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Tests and Generate Report",
+      "type": "npm",
+      "script": "test:report",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Tests (Chrome)",
+      "type": "npm",
+      "script": "test:chrome",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Tests (Firefox)",
+      "type": "npm",
+      "script": "test:firefox",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Tests (WebKit/Safari)",
+      "type": "npm",
+      "script": "test:webkit",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Tests (Headless)",
+      "type": "npm",
+      "script": "test:headless",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Tests (Headed)",
+      "type": "npm",
+      "script": "test:headed",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Login Tests",
+      "type": "npm",
+      "script": "test:login",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Cart Tests",
+      "type": "npm",
+      "script": "test:cart",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Checkout Tests",
+      "type": "npm",
+      "script": "test:checkout",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Generate Report",
+      "type": "npm",
+      "script": "report",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open HTML Report",
+      "type": "shell",
+      "command": "Start-Process",
+      "args": [
+        "${workspaceFolder}\\reports\\generated\\cucumber-report.html"
+      ],
+      "windows": {
+        "command": "Start-Process",
+        "args": [
+          "${workspaceFolder}\\reports\\generated\\cucumber-report.html"
+        ]
+      },
+      "linux": {
+        "command": "xdg-open",
+        "args": [
+          "${workspaceFolder}/reports/generated/cucumber-report.html"
+        ]
+      },
+      "osx": {
+        "command": "open",
+        "args": [
+          "${workspaceFolder}/reports/generated/cucumber-report.html"
+        ]
+      },
+      "presentation": {
+        "reveal": "never",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Tests + Open Report",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Run Tests and Generate Report",
+        "Open HTML Report"
+      ],
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "focus": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean Reports",
+      "type": "npm",
+      "script": "clean",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

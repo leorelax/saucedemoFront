@@ -1,0 +1,30 @@
+{
+  // ========================================
+  // EXTENSIONES RECOMENDADAS PARA ESTE PROYECTO
+  // ========================================
+  // VSCode sugerirá instalar estas extensiones automáticamente
+  
+  "recommendations": [
+    // Cucumber/Gherkin support
+    "alexkrechik.cucumberautocomplete",
+    "cucumberopen.cucumber-official",
+    
+    // Playwright support
+    "ms-playwright.playwright",
+    
+    // TypeScript & JavaScript
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    
+    // Git & GitHub
+    "eamodio.gitlens",
+    
+    // Utilities
+    "streetsidesoftware.code-spell-checker",
+    "aaron-bond.better-comments",
+    "wayou.vscode-todo-highlight",
+    
+    // Icons & Theme
+    "pkief.material-icon-theme"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "steps": [
+    "src/steps/*.ts",
+    "src/steps/**/*.ts"
+  ],
+  "syncfeatures": "src/features/**/*.feature",
+  "strictGherkinCompletion": false,
+  "smartSnippets": true,
+  "stepsInvariants": true,
+  "stepRegExSymbol": "'",
+  "gherkinDefinitionPart": "(Given|When|Then|And)\\(",
+  "formatConfOverride": {
+    "And": 3,
+    "Given": 3,
+    "Then": 3,
+    "When": 3
+  },
+  "customParameters": []
+}

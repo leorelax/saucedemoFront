@@ -1,0 +1,134 @@
+{
+  // ========================================
+  // CUCUMBER CONFIGURATION
+  // ========================================
+  // Configuración para la extensión Cucumber (Gherkin)
+  // Permite Ctrl+Click desde features a step definitions
+  
+  // Para extensión oficial de Cucumber
+  "cucumber.features": [
+    "src/features/**/*.feature"
+  ],
+  
+  "cucumber.glue": [
+    "src/steps/**/*.ts",
+    "src/steps/**/*.js"
+  ],
+
+  // Para extensión Cucumber (Gherkin) Full Support de Alexander Krechik
+  "cucumberautocomplete.steps": [
+    "src/steps/**/*.ts",
+    "src/steps/**/*.js"
+  ],
+  
+  "cucumberautocomplete.syncfeatures": "src/features/**/*.feature",
+  
+  "cucumberautocomplete.strictGherkinCompletion": false,
+  
+  "cucumberautocomplete.smartSnippets": true,
+  
+  "cucumberautocomplete.stepsInvariants": true,
+  
+  "cucumberautocomplete.stepRegExSymbol": "'",
+  
+  "cucumberautocomplete.formatConfOverride": {
+    "And": 3,
+    "Given": 3,  
+    "Then": 3,
+    "When": 3
+  },
+  
+  "cucumberautocomplete.onTypeFormat": true,
+  
+  "cucumberautocomplete.gherkinDefinitionPart": "(Given|When|Then|And)\\(",
+  
+  "cucumberautocomplete.customParameters": [],
+  
+  // Para extensión CucumberJS de Steve Hipwell
+  "cucumberjs.features": "src/features/**/*.feature",
+  "cucumberjs.steps": "steps/**/*.ts",
+
+  // ========================================
+  // TYPESCRIPT CONFIGURATION
+  // ========================================
+  
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+
+  // ========================================
+  // EDITOR CONFIGURATION
+  // ========================================
+  
+  "[feature]": {
+    "editor.quickSuggestions": {
+      "comments": false,
+      "strings": true,
+      "other": true
+    }
+  },
+  
+  "[cucumber]": {
+    "editor.quickSuggestions": {
+      "comments": false,
+      "strings": true,
+      "other": true
+    }
+  },
+  
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+
+  // ========================================
+  // FILE ASSOCIATIONS
+  // ========================================
+  
+  "files.associations": {
+    "*.feature": "cucumber",
+    ".env.example": "properties"
+  },
+  
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/reports/**": true
+  },
+
+  // ========================================
+  // SEARCH & FILES CONFIGURATION
+  // ========================================
+  
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/reports": true,
+    "**/.git": true
+  },
+  
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true
+  },
+
+  // ========================================
+  // TESTING CONFIGURATION
+  // ========================================
+  
+  "testExplorer.useNativeTesting": true,
+  
+  "playwright.reuseBrowser": true,
+  
+  // ========================================
+  // TERMINAL CONFIGURATION
+  // ========================================
+  
+  "terminal.integrated.env.windows": {
+    "ENV": "dev"
+  }
+}

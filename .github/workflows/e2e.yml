@@ -1,0 +1,61 @@
+name: E2E Tests — SauceDemo
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Instalar navegadores Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Ejecutar tests
+        env:
+          BASE_URL: https://www.saucedemo.com
+          BROWSER: chromium
+          HEADLESS: true
+          WORKERS: 4
+          RETRY_ATTEMPTS: 2
+          STANDARD_USER: standard_user
+          PASSWORD: secret_sauce
+          SCREENSHOT_ON_FAILURE: true
+          REPORT_TITLE: SauceDemo Automation Test Report
+          REPORT_NAME: Playwright-Cucumber Testing Framework
+        run: npm test
+
+      - name: Generar reporte HTML
+        if: always()
+        run: npm run report
+
+      - name: Subir reporte como artefacto
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: reports/generated/
+          retention-days: 7
+
+      - name: Subir screenshots de fallos
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: reports/screenshots/
+          retention-days: 7
