@@ -1,47 +1,36 @@
 # Dependencies
 node_modules/
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
 
 # Build outputs
 dist/
 build/
-*.js
+
+# TypeScript compilado
 *.js.map
-!cucumber.js
-!scripts/**/*.js
-!src/reports/config/*.js
+*.tsbuildinfo
 
 # Test outputs
-reports/generated/
-reports/screenshots/
+reports/
 test-results/
 playwright-report/
 .playwright/
 
-# Environment files
+# Environment
 .env
 .env.local
 .env.*.local
 
 # IDE
 .idea/
+.vscode/
 *.swp
 *.swo
 *~
-.DS_Store
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # OS
-Thumbs.db
 .DS_Store
+Thumbs.db
 
-# TypeScript
-*.tsbuildinfo
+# Logs
+*.log
+npm-debug.log*
